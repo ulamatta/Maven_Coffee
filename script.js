@@ -7,17 +7,18 @@ document.getElementById('order-form').addEventListener('submit', function (event
 
     const kegs = document.getElementById('kegs').value;
     const deliveryDate = document.getElementById('delivery-date').value;
+    const companyName = document.getElementById('company-name').value;
 
-    // Send email using EmailJS
     emailjs
         .send('service_qqlbeh5', 'template_e545k99', {
             kegs: kegs,
             delivery_date: deliveryDate,
-            to_email: 'umberto@eximiuscoffee.com',
+            company_name: companyName,
+            to_email: 'umberto@example.com',
         })
         .then(
             function (response) {
-                alert(`Your order of ${kegs} kegs has been scheduled for delivery on ${deliveryDate}.`);
+                localStorage.setItem('orderSummary', `Your order of ${kegs} kegs has been scheduled for delivery on ${deliveryDate}. Company: ${companyName}`);
                 window.location.href = 'thankyou.html';
             },
             function (error) {
