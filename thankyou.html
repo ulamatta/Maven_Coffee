@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - Maven Coffee Company</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="thankyou.js"></script>
 </head>
 <body>
     <header>
@@ -12,6 +13,11 @@
         <img src="logo.png" alt="Maven Coffee Company Logo" class="logo">
     </header>
     <h2>Thank You for Your Order</h2>
-    <p>Your order has been submitted. We will deliver your cold brew kegs as requested.</p>
+    <div id="order-summary">
+        <p><strong>Company Name:</strong> <span id="company-name"></span></p>
+        <p><strong>Number of Kegs:</strong> <span id="kegs-ordered"></span></p>
+        <p><strong>Delivery Date:</strong> <span id="delivery-date"></span></p>
+    </div>
+    <p>Your order has been submitted. We'll get in touch with you shortly to confirm the details.</p>
 </body>
 </html>
