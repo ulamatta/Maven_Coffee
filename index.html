@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maven Coffee Company - Cold Brew Order</title>
+    <title>Eximius Coffee Order Form</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <script>
-        emailjs.init('bCp-isDmbw1mMpHl5');
-    </script>
 </head>
 <body>
-    <header>
-        <h1>Maven Coffee Company</h1>
-        <img src="logo.png" alt="Maven Coffee Company Logo" class="logo">
-    </header>
-    <h2>Cold Brew Order</h2>
+    <h1>Eximius Coffee Order Form</h1>
+
     <form id="order-form">
-        <label for="kegs">Number of kegs (2.5 gallons each):</label>
-        <input type="number" id="kegs" name="kegs" min="1" required>
-        <br>
-        <label for="delivery-date">Delivery Date:</label>
+        <label for="kegs">Number of kegs:</label>
+        <input type="number" id="kegs" name="kegs" required>
+
+        <label for="delivery-date">Preferred delivery date:</label>
         <input type="date" id="delivery-date" name="delivery-date" required>
-        <br>
+
+        <label for="company-name">Company name:</label>
+        <input type="text" id="company-name" name="company-name" required>
+
         <button type="submit">Submit Order</button>
     </form>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('bCp-isDmbw1mMpHl5');
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
