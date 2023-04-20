@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Maven Coffee Company</title>
+    <title>Thank You - Eximius Coffee</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
     <script src="thankyou.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Maven Coffee Company</h1>
-        <img src="logo.png" alt="Maven Coffee Company Logo" class="logo">
-    </header>
-    <h2>Thank You for Your Order!</h2>
-    <div id="order-summary">
-        <p><strong>Company Name:</strong> <span id="company-name"></span></p>
-        <p><strong>Number of Kegs:</strong> <span id="kegs-ordered"></span></p>
-        <p><strong>Delivery Date:</strong> <span id="delivery-date"></span></p>
-    </div>
-    <p>Your order has been submitted. We'll get in touch with you shortly to confirm the details.</p>
+    <img src="logo.png" alt="Eximius Coffee Logo" class="logo">
+    <h1>Thank You for Your Order</h1>
+    <p>Your order summary:</p>
+    <p>Company: <span id="company-name"></span></p>
+    <p>Kegs: <span id="kegs-ordered"></span></p>
+    <p>Delivery Date: <span id="delivery-date"></span></p>
 </body>
 </html>
