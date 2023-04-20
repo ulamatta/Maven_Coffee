@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const companyName = urlParams.get('company_name');
-    const kegs = urlParams.get('kegs');
-    const deliveryDate = urlParams.get('delivery_date');
+  const orderSummary = document.getElementById('order-summary');
+  const companyName = localStorage.getItem('companyName');
+  const kegs = localStorage.getItem('kegs');
+  const deliveryDate = localStorage.getItem('deliveryDate');
 
-    document.getElementById('company-name').innerText = companyName;
-    document.getElementById('kegs-ordered').innerText = kegs;
-    document.getElementById('delivery-date').innerText = deliveryDate;
+  if (companyName && kegs && deliveryDate) {
+    orderSummary.innerHTML = `
+      <h3>Order Summary</h3>
+      <p>Company Name: ${companyName}</p>
+      <p>Kegs: ${kegs}</p>
+      <p>Delivery Date: ${deliveryDate}</p>
+    `;
+  } else {
+    orderSummary.innerHTML = '<p>Order information not available.</p>';
+  }
 });
