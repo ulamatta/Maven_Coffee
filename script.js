@@ -1,28 +1,25 @@
 // Initialize EmailJS with your User ID
 emailjs.init('bCp-isDmbw1mMpHl5');
 
-// Form submission event listener
 document.getElementById('order-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const kegs = document.getElementById('kegs').value;
-    const deliveryDate = document.getElementById('delivery-date').value;
-    const companyName = document.getElementById('company-name').value;
+  const companyName = document.getElementById('company-name').value;
+  const kegs = document.getElementById('kegs').value;
+  const deliveryDate = document.getElementById('delivery-date').value;
 
-    emailjs
-        .send('service_qqlbeh5', 'template_e545k99', {
-            kegs: kegs,
-            delivery_date: deliveryDate,
-            company_name: companyName,
-            to_email: 'umberto@example.com',
-        })
-        .then(
-            function (response) {
-                localStorage.setItem('orderSummary', `Your order of ${kegs} kegs has been scheduled for delivery on ${deliveryDate}. Company: ${companyName}`);
-                window.location.href = 'thankyou.html';
-            },
-            function (error) {
-                alert('Failed to send the order. Please try again later.');
-            }
-        );
+  emailjs.send('service_qqlbeh5', 'template_e545k99', {
+    company: companyName,
+    kegs: kegs,
+    delivery_date: deliveryDate,
+    to_email: 'umberto@eximiuscoffee.com',
+  })
+    .then(
+      function (response) {
+        window.location.href = `thankyou.html?company=${encodeURIComponent(companyName)}&kegs=${encodeURIComponent(kegs)}&delivery_date=${encodeURIComponent(deliveryDate)}`;
+      },
+      function (error) {
+        alert('Failed to send the order. Please try again later.');
+      }
+    );
 });
